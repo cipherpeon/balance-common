@@ -29,11 +29,19 @@ export const debounceRequest = (request, params, timeout) =>
  * @param  {String} [string]
  * @return {String}
  */
-export const capitalize = string =>
-  string
-    .split(' ')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-    .join(' ');
+export const capitalize = string => {
+  switch (string) {
+    case 'METAMASK':
+      return 'MetaMask';
+    case 'WALLETCONNECT':
+      return 'WalletConnect';
+    default:
+      return string
+        .split(' ')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+        .join(' ');
+  }
+};
 
 /**
  * @desc ellipse text to max maxLength
