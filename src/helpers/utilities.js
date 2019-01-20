@@ -30,7 +30,7 @@ export const debounceRequest = (request, params, timeout) =>
  * @return {String}
  */
 export const capitalize = string => {
-  switch (string) {
+  switch (string.toUpperCase()) {
     case 'METAMASK':
       return 'MetaMask';
     case 'WALLETCONNECT':
